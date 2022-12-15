@@ -50,10 +50,10 @@ def server():
                 if not success:
                     break
                 else:
-                    frame, num= stream_yolo.yolo(frame, model_label)
+                    frame, num, fair= stream_yolo.yolo(frame, model_label)
                     readings.append(num)
-                    if readings[-1] == readings[-2] == readings[-3] == readings[-4] == readings[-5]:
-                        sleep(1)
+                    if readings[-1] == readings[-2] == readings[-3] == readings[-4] == readings[-5] and readings[-1] != 0 and fair == "true":
+                        sleep(2)
                     ret, buffer = cv2.imencode('.jpg', frame)
                     frame = buffer.tobytes()
                     yield (b'--frame\r\n'
@@ -63,7 +63,7 @@ def server():
             print( 'disconnected stream' )
 
 
-    app.run(host='0.0.0.0', port=3003)
+    app.run(host='0.0.0.0', port=3002)
 
 t=Thread(target=server, daemon=True)
 t.start()
