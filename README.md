@@ -1,13 +1,12 @@
 # 0. Abstract
 **Notion : [UVC Team 4 Project Yolo Socket Stream](https://www.notion.so/1d50eee57be542fd8435cf5088dd9936#778988f111d4416abeb34f7d15eb9f94)**  
 **This project is about UVC Team Project**  
-**This project started to seperate non-smokers from secondhand smoke.**  
-This map displays Near Smoking Zone and Trash Can, thus, non-smokers can avoid certain area  
-This app is made for koreans, using Naver Map API.  
-But, I believe you can use it in foreign country, if you get used to using Google Map API instead.
+**This project is to implement Smart Factory Management System.**  
+This document only notes how I used Yolo Model & Socket System & Flask to apply  
+AI Model & Socket Connection with PLC & Stream on HTTP Server  
 
-I've got the area informaition from Seoul City hall,  
-And I published this App via Google Play Store
+I Referenced most of the code from UVC,
+Especially On Socket Connection Part.
 
 ## Index  
 
