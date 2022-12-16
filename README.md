@@ -10,12 +10,12 @@ Especially On Socket Connection Part.
 
 ## Index  
 
-[**1. File Structure**](https://github.com/shlee9605/CaMap/blob/Ver0.6/README.md#1-file-structure)  
-[**2. Develop Environment**](https://github.com/shlee9605/CaMap/blob/Ver0.6/README.md#2-Develop-Environment)  
-[**3. Getting Packages**](https://github.com/shlee9605/CaMap/blob/Ver0.6/README.md#3-Getting-Packages)  
-[**4. Setting Configuration**](https://github.com/shlee9605/CaMap/blob/Ver0.6/README.md#4-Setting-Configuration)  
-[**5. Used Concept**](https://github.com/shlee9605/CaMap/blob/Ver0.6/README.md#5-Used-Concept)  
-[**6. Usage Example**](https://github.com/shlee9605/CaMap/blob/Ver0.6/README.md#6-Usage-Example)  
+[**1. File Structure**](https://github.com/shlee9605/team4-yolosocket#1-file-structure)  
+[**2. Develop Environment**](https://github.com/shlee9605/team4-yolosocket#2-Develop-Environment)  
+[**3. Getting Packages**](https://github.com/shlee9605/team4-yolosocket#3-Getting-Packages)  
+[**4. Setting Configuration**](https://github.com/team4-yolosocketmd#4-Setting-Configuration)  
+[**5. Used Concept**](https://github.com/shlee9605/team4-yolosocket#5-Used-Concept)  
+[**6. Usage Example**](https://github.com/shlee9605/team4-yolosocket#6-Usage-Example)  
 
 ## Undone Document
   
