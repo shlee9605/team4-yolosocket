@@ -28,118 +28,35 @@ Especially On Socket Connection Part.
 
 ```
 .
-├── android			    # android config
-│   ├── .gradle		            # gradle config
-│   │   └── ...etc
-│   ├── app
-│   │   ├── src
-│   │   │   ├── debug		    # debug manifest
-│   │   │   ├── main		    # main manifest
-│   │   │   │   ├── java
-│   │   │   │   ├── kotlin
-│   │   │   │   └── res		    # resources
-│   │   │   │   │   ├── drawable
-│   │   │   │   │   ├── mipmap	    # app icons
-│   │   │   │   │   └── values
-│   │   │   └── profile		    # profile manifest
-│   │   ├── build.gradle	    # app/build.gradle
-│   │   └── ...etc
-│   ├── gradle
-│   │   └── wrapper		    # gradle wrapper
-│   ├── build.gradle
-│   ├── key.properties		    # key properties
-│   ├── local.properties	    # local properties
-│   └── ...etc
-├── ios				    # ios config
-│   ├── Flutter			    # flutter ios config
-│   │   └── ...etc
-│   ├── Runner
-│   │   ├── Assets.xcassets	    # app icons
-│   │   ├── Base.lproj		    
-│   │   ├── AppDelegate.swift
-│   │   ├── Info.plist		    # ios runner config
-│   │   └── ...etc
-│   └── ...etc
-├── lib                             # main function library
-│   ├── custom_class		    # custom location classes
-│   ├── services		    # minor services classes
-│   └── main.dart		    # main
-├── linux                           # linux cconfig
-│   ├── flutter 	            # flutter linux config
-│   │   └── ...etc
-│   ├── CMakeLists.txt              # cmake config
-│   ├── main.cc		            # main linux
-│   ├── my_application.cc	    # main config
-│   └── my_application.h            # my_application library
-├── macos                           # 로그 폴더
-│   ├── Flutter		   	    # flutter ios config
-│   │   └── ...etc
-│   ├── Runner
-│   │   ├── Assets.xcassets	    # app icons
-│   │   ├── Base.lproj		    
-│   │   ├── AppDelegate.swift
-│   │   ├── Info.plist		    # ios runner config
-│   │   └── ...etc
-│   └── ...etc
-├── test                            # Unit, Function, Class, Widget, Total test
-├── web		                    # Web config
-│   ├── icons
-│   ├── favicon.png
-│   ├── index.html
-│   └── ...etc
-├── windows                         # Windows config
-│   ├── flutter			    # flutter windows config
-│   │   └── ...etc
-│   ├── runner			    # runner in windows
-│   │   └── ...etc
-│   ├── CMakeLists.txt
-│   └── ...etc
-├── .dart_tool                      #  pub package folder
-│   └── ...etc
-├── .idea                           # IDE config
-│   └── ...etc
-├── .vscode                         # VS Code config
-│   └── ...etc
-├── assets                          # assets for program
-│   ├── areas			    # location data in csv
-│   └── markers			    # marker image icon in png
-├── build                           # build outputs
-│   └── ...etc
-├── .metadata
-├── analysis_options.yaml
-├── pubspec.lock
-├── pubspec.yaml		    # pub library declare
-├── README.md
-├── .env                            # development config
-├── .flutter-plugins
-├── .flutter-plugins-dependencies
-├── .gitignore                      # main config
-└── camap.iml
+├── dev.py			      # Main
+│   ├── cam.py		    # Socket Sending Camera
+│   ├── stream.py     # Streaming Camera
 ```
 
 # 2. Develop Environment
 
-For : Android(current), IOS, Windows, Linux(not done)  
-Used : Google Cloud, Firebase, Naver Cloud, Play Store, Google Admob  
-**You Must Refer [My Notion(in Kor)](https://www.notion.so/shlee9605/959ac634936b4a96be20363bc153f53e) Together for Plugin Packages Description of This Project**  
+For : Windows
+Used : Yolo, OpenCV, Flask, ETC
+**You Must Refer [My Notion(in Kor)](https://www.notion.so/UVC-c36970dd6c884131b159ea837790db94) Together for Plugin Packages Description of This Project**  
 
 ## Setup
 For Development OS, I used `Windows10`.  
-Then, set your working space for flutter  
+Then, set your working space for python  
 ```console
 > cd C:\Workspace
 ```
   
 ## Installation
-You need to set up both Android Studio and Flutter  
-Checkout [My Notion(in Kor)](https://www.notion.so/shlee9605/959ac634936b4a96be20363bc153f53e) for Installation in Windows  
-You can also refer to [Google flutter documents](https://docs.flutter.dev/),  
-which includes [Installation](https://docs.flutter.dev/get-started/install), [Lab](https://docs.flutter.dev/get-started/codelab), and [Cookbook](https://docs.flutter.dev/cookbook).
+You need to set up Yolov5
+Checkout [My Notion(in Kor)](https://www.notion.so/1d50eee57be542fd8435cf5088dd9936#38e3ee19b7d34922bc082fc9921ff235) for Installation in Windows  
+You can also refer to [Yolov5 documents](https://github.com/ultralytics/yolov5),  
+which includes information about [Training Custom Dataset](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data), [Roboflow](https://roboflow.com/?ref=ultralytics)
   
-## Create Project
+## Activate Anaconda
 Create Your Project
 ```console
-> flutter create "Project Name"
+> conda create -n yolov5 python=3.9  
+> conda activate yolov5  
 ```
   
 ## Running Project
