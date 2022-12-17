@@ -52,12 +52,12 @@ def server():
                 else:
                     frame, num, fair= stream_yolo.yolo(frame, model_label)
                     readings.append(num)
-                    if readings[-1] == readings[-2] == readings[-3] == readings[-4] == readings[-5] and readings[-1] != 0 and fair == "true":
-                        sleep(2)
                     ret, buffer = cv2.imencode('.jpg', frame)
                     frame = buffer.tobytes()
                     yield (b'--frame\r\n'
                         b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+                    if readings[-1] == readings[-2] == readings[-3] and readings[-1] != 0 and fair == "true":
+                        sleep(1)
             
         except GeneratorExit :
             print( 'disconnected stream' )
