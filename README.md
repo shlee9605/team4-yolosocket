@@ -67,25 +67,19 @@ You can run your project via commands below
 > python dev.py  
 ```
   
-## System Link with your DB(database)
-will be updated in ver 2.0  
-  
 # 3. Getting Packages
-In `C:\Workspace\pubspec.yaml`,  
 
 **Packages**
-```RAML
-dependencies:
-  flutter:
-    sdk: flutter
+```Python
+import cv2
+import torch
+from time import sleep
 
-  cupertino_icons: ^1.0.2
-  flutter_config: ^1.0.8					#for dotenv
-  naver_map_plugin: ^0.9.6 					#for naver map
-    # git: https://github.com/LBSTECH/naver_map_plugin.git	#for latest version of naver map
-  csv: ^5.0.0 							#for reading csv
-  google_mobile_ads: ^2.3.0 					#for google ad
-  geolocator: ^8.2.1  
+from threading import Thread
+
+from flask import Flask
+from flask import Response
+from flask import stream_with_context 
 ```
   
 ## cupertino_icons
