@@ -292,10 +292,11 @@ I am going to write the Big concept I used in this project Approximately,
 Writing specifically Instead.
 
 ## Yolo
-[Yolo Git](https://github.com/ultralytics/yolov5)
+[Yolo Git](https://github.com/ultralytics/yolov5)  
 [Our Notion(Kor)](https://www.notion.so/1d50eee57be542fd8435cf5088dd9936#e8e36a7d3e494eef94265ebc1264daa0)
 
-## Image Pre-Processing(Guassian Blur, Gray Filter, Sobel Filter, Canny Edge)
+## Image Pre-Processing
+especailly about ***Guassian Blur, Gray Filter, Sobel Filter, Canny Edge***
 [Our Notion(Kor)](https://www.notion.so/1d50eee57be542fd8435cf5088dd9936#b4c2b136a9d2479aac508cf5c9a98d1e)
   
   
