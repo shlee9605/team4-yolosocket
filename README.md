@@ -129,8 +129,8 @@ You would then be able to use the Trained Yolo .pt Model
 ### Configuration
 To use the yolo model and call the trained model successfully,  
 you would need to specify your yolo model's path.
-
-Below shows how I specified my Yolo & Yolo model
+  
+Below shows how I specified my Yolo & Yolo model  
 ```Python
 ...
 model_label = torch.hub.load('../yolov5', 'custom', path='../yolov5/runs/train/dices5/weights/last.pt', source='local') # Read Train Model
