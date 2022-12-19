@@ -258,39 +258,32 @@ print('close PLC Success!')
   
   
 # 4. Setting Configuration
-Create your `.gitignore` file in `C:\Workspace`, then setup like below.  
-In `C:\Workspace\.gitignore`,  
+I have not used extra configuration file.
+So, there aren't much for you to configure
   
-```
-.env
-assets/
-/android/key.properties
-/android/app/camap.jks
-/android/app/proguard-rules.pro
-...       # default .gitignore for flutter  
-```
-  
-## dotenv configuration
-  
-We have already discuss about using dotenv configuration above.  
-Please note [flutter_config](https://github.com/shlee9605/CaMap/blob/Ver0.6/README.md#flutter_config)
-  
-## assets configuration
-  
-In `C:\Workspace\pubspec.yaml`,  
+## Flask configuration
 
-**Assets**
-```RAML
-flutter:
-  uses-material-design: true
+We have already discuss about Flask Configuration above.  
+In `C:\Workspace\dev.py`,  
 
-  assets:
-  - assets/markers/ 	#for marker location in csv
-  - assets/areas/ 	  #for marker image icon in png
+```Python
+...  
+app = Flask(__name__)
+@app.route('/stream')
+...  
+app.run(host='0.0.0.0', port=3002)  #you can see your stream through `http://localhost/stream`
 ```
   
-Then, make assets/markers & assets/areas folder in `C:\Workspace`.  
+Then, you can check your vision on http://(your IP)/stream
   
+## Socket configuration
+  
+We have already discuss about Socket Configuration above.  
+```Python
+HOST = '192.168.0.120'  # Edukit Port
+PORT = 2004
+ADDR = (HOST,PORT)
+```
   
 # 5. Used Concept
   
