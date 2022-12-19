@@ -69,7 +69,7 @@ You can run your project via commands below
   
 # 3. Getting Packages
 
-**Packages**
+## Packages
 ```Python
 import cv2
 import torch
