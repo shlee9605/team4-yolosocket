@@ -41,7 +41,7 @@ First, set up a working space for Python.
   
 ## Installation
 You need to install Yolov5.
-Check out [My Notion(in Kor)](https://www.notion.so/1d50eee57be542fd8435cf5088dd9936#38e3ee19b7d34922bc082fc9921ff235) on how to install it on Windows.
+Check out [My Notion(in Kor)](https://www.notion.so/1d50eee57be542fd8435cf5088dd9936#38e3ee19b7d34922bc082fc9921ff235) on how to install it on Windows.  
 You can also refer to [Yolov5 documents](https://github.com/ultralytics/yolov5),  
 which includes information about [Training Custom Dataset](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data), and [Roboflow](https://roboflow.com/?ref=ultralytics)
   
