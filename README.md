@@ -180,14 +180,42 @@ Here is the following to setup host and port using flask
 ...  
 app = Flask(__name__)
 @app.route('/stream')
-def stream():  
 ...  
-app.run(host='0.0.0.0', port=3002)  
+app.run(host='0.0.0.0', port=3002)  #you can see your stream through `http://localhost/stream`
 ```
   
 ### Usage
+After setting up, you can stream your vision,  
+using python project as server.  
+Below you can see some example how I used in this project
+```Python
+def stream():    
+  try :
+    return Response(
+      stream_with_context( hello() ),
+      mimetype='multipart/x-mixed-replace; boundary=frame' )
+  except Exception as e :
+    print('stream error : ',str(e))
 
-  
+def hello():
+  readings = [-1, -1]
+  try : 
+    while webcam.isOpened():
+      success, frame = webcam.read()
+      if not success:
+        break
+      else:
+        frame, num, fair= stream_yolo.yolo(frame, model_label)
+        readings.append(num)
+        ret, buffer = cv2.imencode('.jpg', frame)
+        frame = buffer.tobytes()
+        yield (b'--frame\r\n'
+          b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+        if readings[-1] == readings[-2] == readings[-3] and readings[-1] != 0 and fair == "true":
+          sleep(1) 
+  except GeneratorExit :
+    print( 'disconnected stream' )
+```
   
 ## Thread, Time, Socket
 
