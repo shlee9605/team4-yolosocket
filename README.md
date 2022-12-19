@@ -227,8 +227,21 @@ PORT = 2004
 ADDR = (HOST,PORT)
 ```
   
-### Usage
-  Will be updated in Ver 1.0
+### Usage  
+Below each will show how I used those embedded library in this project.  
+  
+#### Thread  
+```Python  
+def server():
+...
+t=Thread(target=server, daemon=True)
+t.start()
+...
+```  
+  
+#### Time  
+  
+#### Socket  
   
   
 # 4. Setting Configuration
