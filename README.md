@@ -28,9 +28,9 @@ Especially On Socket Connection Part.
 
 ```
 .
-├── dev.py			      # Main
-│   ├── cam.py		    # Socket Sending Camera
-│   ├── stream.py     # Streaming Camera
+└── dev.py			      # Main
+    ├── cam.py		    # Socket Sending Camera
+    └── stream.py     # Streaming Camera
 ```
 
 # 2. Develop Environment
