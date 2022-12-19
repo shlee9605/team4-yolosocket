@@ -192,27 +192,23 @@ Below you can see some example how I used in this project
 def stream():    
   try :
     return Response(
-      stream_with_context( hello() ),
+      stream_with_context( streaming() ),
       mimetype='multipart/x-mixed-replace; boundary=frame' )
   except Exception as e :
     print('stream error : ',str(e))
 
-def hello():
-  readings = [-1, -1]
+def streaming():
   try : 
     while webcam.isOpened():
       success, frame = webcam.read()
       if not success:
         break
       else:
-        frame, num, fair= stream_yolo.yolo(frame, model_label)
-        readings.append(num)
+        frame = stream_yolo.yolo(frame, model_label)
         ret, buffer = cv2.imencode('.jpg', frame)
         frame = buffer.tobytes()
         yield (b'--frame\r\n'
           b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-        if readings[-1] == readings[-2] == readings[-3] and readings[-1] != 0 and fair == "true":
-          sleep(1) 
   except GeneratorExit :
     print( 'disconnected stream' )
 ```
