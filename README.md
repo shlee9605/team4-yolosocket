@@ -133,72 +133,50 @@ available to Use Trained Yolo .pt Model
 > pip install torch>=1.7.0
 ```  
   
-Because this plugin requires lots of information about naver cloud platform,  
-I wrote detailed manual about this plugin in [My Notion(in Kor)](https://www.notion.so/shlee9605/959ac634936b4a96be20363bc153f53e#1f80ba301cd74cc6b3f46a7a1b1fffa3).  
-  
-## Torch
-
-### Installation
-This allows you to read csv files in flutter.  
-
-```console
-> flutter flutter pub add csv  
-```  
-  
 ### Configuration
-For this project, You need to setup csv files in your asset folders `C:\Workspace\assets\areas`.  
-Move your `csv` files which contains location coordinate data.  
-csv file must include information of location name(id), latitude, and longitude.  
+To use yolo model and call the trained model successfully,  
+You need to specify your yolo model's path
 
-Below shows you some of examples of csv contents.  
-```
-1-1,37.50375605,127.0241095
-1-2,37.48276664,127.0349496
-1-3,37.48124455,127.0361898
+Below Shows how I specify My Yolo&Yolo model
+```Python
+...
+model_label = torch.hub.load('../yolov5', 'custom', path='../yolov5/runs/train/dices5/weights/last.pt', source='local') # Read Train Model
 ...
 ```
   
 ### Usage
-Below code shows example how I applied in this project
-```dart
-class SmokingAreaData {
-  //for smoking area
-  static List<List<dynamic>>? csvData;
+After reading yolo model via pytorch, You can use it via returned variable.
+```Python
+results = model_label(imgRGB)
+results = results.pandas().xyxy[0][['name','xmin','ymin','xmax','ymax']]
 
-  //read csv data from assets/areas
-  static Future<List<List<dynamic>>> processCsv() async {
-    var result = await rootBundle.loadString(
-      "assets/areas/Seocho_SmokingArea.csv",
-    );
-    return const CsvToListConverter().convert(result, eol: "\n");
-  }
+dice = [0, 0, 0, 0]
+cup = [0, 0, 0, 0]
 
-  //return as list of custom marker, using csv data
-  static Future<List<AreaType>> markers() async {
-    List<AreaType> areas = [];
-    csvData = await processCsv();
-
-    //add in area list using which gives you areatype
-    for (List<dynamic> lt in csvData!) {
-      areas.add(SmokingArea(aid: lt[0], location: LatLng(lt[1], lt[2])));
-    }
-    
-    return areas;
-  }
-}
+for num, i in enumerate(results.values):
+  if i[0] == 'Dice' and dice[0] == 0 :                
+    dice = [int(i[1]), int(i[2]), int(i[3]), int(i[4])]
+  if i[0] == 'Cup' and cup[0] == 0 :
+    cup = [int(i[1]), int(i[2]), int(i[3]), int(i[4])]
+  if dice[0] != 0 and cup[0] != 0:
+    break
 ```
   
 ## Flask
 
 ### Installation
-This allows you to use google mobile ad banner in organized form/widget.  
+This allows you to open route server via python.
+I used it in this project to stream my Yolo-Applied-Vision.  
 
 ```console
-> flutter flutter pub add google_mobile_ads  
+> pip install flask>=2.2.2  
 ```  
+
+### Configuration
+  Will be updated in Ver 1.0
   
-I also had to write manual in [My Notion(in Kor)](https://www.notion.so/shlee9605/959ac634936b4a96be20363bc153f53e#1f80ba301cd74cc6b3f46a7a1b1fffa3),  
-since this plugin also requires lots of information about google cloud platform, firebase, and Admob  
+### Usage
+  Will be updated in Ver 1.0
   
   
 ## Thread, Time, Socket
@@ -215,9 +193,6 @@ This gives you exact coordinates about your location
   
 ### Usage
   Will be updated in Ver 1.0
-  
-## Time, sleep
-라이브러리 설치 -비밀번호 암호화, 토큰 관리
   
   
 # 4. Setting Configuration
