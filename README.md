@@ -62,48 +62,10 @@ Create Your Project
 ## Running Project
 You can run your project via commands below
 
-### default(release)
+### default(debug Mode)
 ```console
-> flutter run
-> flutter run --release
+> python dev.py  
 ```
-  
-If null safety error occurs,
-```console
-> flutter run --no-sound-null-safety
-> flutter run --release --no-sound-null-safety
-```
-  
-### Debug
-In debugging mode,  
-
-```console
-> flutter run --debug
-```
-  
-If null safety error occurs,
-```console
-> flutter run --debug --no-sound-null-safety
-```
-
-### Build
-To publish your project, You need to build your project first.  
-You can build your project through commands below.  
-You can find your appbundle here : **`C:\Workspace\build\app\outputs\bundle\release`**  
-*(Running flutter build defaults to a release build.)*
-
-```console
-> flutter build appbundle
-> flutter build appbundle --release
-> flutter build appbundle --debug
-```  
-  
-If null safety error occurs,
-```console
-> flutter build appbundle --no-sound-null-safety
-> flutter build appbundle --release --no-sound-null-safety
-> flutter build appbundle --debug --no-sound-null-safety
-```  
   
 ## System Link with your DB(database)
 will be updated in ver 2.0  
