@@ -240,8 +240,21 @@ t.start()
 ```  
   
 #### Time  
+```Python  
+...
+sleep(1)  #Because PLC cannot receive data frequently, it needs guaranteed 1 sec delay  
+```    
   
 #### Socket  
+```Python  
+...
+clientSocket = socket(AF_INET, SOCK_STREAM)
+clientSocket.connect(ADDR)
+print('Connection PLC Success!')
+clientSocket.send(socketTxData + num_little)
+clientSocket.close()
+print('close PLC Success!')
+```  
   
   
 # 4. Setting Configuration
@@ -277,16 +290,6 @@ flutter:
 ```
   
 Then, make assets/markers & assets/areas folder in `C:\Workspace`.  
-  
-## keystore configuration
-  
-keystore configuration requires basic knowledge about key signing.
-Check out [My Notion(in Kor)](https://www.notion.so/shlee9605/959ac634936b4a96be20363bc153f53e#a575498637cf4011b617deda1e9cfd72)  
-  
-## proguard configuration
-  
-proguard configuration requires basic knowledge about multidex support.  
-Check out either [My Notion(in Kor)](https://www.notion.so/shlee9605/959ac634936b4a96be20363bc153f53e#8a23338df33c40a9b3aa377f048ca3b8) or [Google flutter documents](https://docs.flutter.dev/deployment/android#enabling-multidex-support).  
   
   
 # 5. Used Concept
