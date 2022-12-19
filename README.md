@@ -210,14 +210,22 @@ def streaming():
 ## Thread, Time, Socket
 
 ### Installation
-This gives you exact coordinates about your location  
+This packages are embedded libraries in Python.  
   
-```console
-> flutter flutter pub add geolocator  
+```Python
+from socket import *
+from threading import Thread
+from time import sleep
 ```  
   
 ### Configuration
-  Will be updated in Ver 1.0
+There Aren't Much to Configure.  
+However, you do need to configure for successful socket connection.  
+```Python
+HOST = '192.168.0.120'  # Edukit Port
+PORT = 2004
+ADDR = (HOST,PORT)
+```
   
 ### Usage
   Will be updated in Ver 1.0
