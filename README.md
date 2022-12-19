@@ -173,10 +173,20 @@ I used it in this project to stream my Yolo-Applied-Vision.
 ```  
 
 ### Configuration
-  Will be updated in Ver 1.0
+To Use Flask Model, You need to setUp both Host and Port.  
+Here is the following to setup host and port using flask
+  
+```Python
+...  
+app = Flask(__name__)
+@app.route('/stream')
+def stream():  
+...  
+app.run(host='0.0.0.0', port=3002)  
+```
   
 ### Usage
-  Will be updated in Ver 1.0
+
   
   
 ## Thread, Time, Socket
