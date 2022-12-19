@@ -302,5 +302,5 @@ especailly about ***Guassian Blur, Gray Filter, Sobel Filter, Canny Edge***
   
 # 6. Usage Example
   
-프로그램 예시
+![1](https://user-images.githubusercontent.com/40204622/208363538-d8618519-d78c-46bd-a30a-0bfccab3f22a.PNG)
   
