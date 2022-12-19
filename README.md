@@ -35,12 +35,12 @@ Especially On Socket Connection Part.
 
 # 2. Develop Environment
 
-For : Windows(anaconda prompt ver3)
-Used : Yolo, OpenCV, Flask, ETC
+For : Windows(anaconda prompt ver3)  
+Used : Yolo, OpenCV, Flask, ETC  
 **You Must Refer [My Notion(in Kor)](https://www.notion.so/UVC-c36970dd6c884131b159ea837790db94) Together for Plugin Packages Description of This Project**  
 
 ## Setup
-For Development OS, I used `Windows10`.  
+For Development OS, I used `Windows10(anaconda3)`.  
 Then, set your working space for python  
 ```console
 > cd C:\Workspace
