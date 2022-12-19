@@ -35,7 +35,7 @@ Especially On Socket Connection Part.
 
 # 2. Develop Environment
 
-For : Windows
+For : Windows(anaconda prompt ver3)
 Used : Yolo, OpenCV, Flask, ETC
 **You Must Refer [My Notion(in Kor)](https://www.notion.so/UVC-c36970dd6c884131b159ea837790db94) Together for Plugin Packages Description of This Project**  
 
@@ -83,65 +83,60 @@ from flask import Response
 from flask import stream_with_context 
 ```
   
-## cupertino_icons
+## OpenCV
 
 ### Installation
-The following adds the Cupertino Icons font to your application.  
-Use with the CupertinoIcons class for iOS style icons.  
+The following allows you to use OpenCV library, 
+which is mainly about vision sensing  
 
 ```console
-> flutter flutter pub add cupertino_icons  
-```  
-  
-## flutter_config
-
-### Installation
-This allows you to use `.env` files. 
-
-```console
-> flutter flutter pub add flutter_config  
+> pip install opencv-python>=4.1.1
 ```  
   
 ### Configuration
-For this project, You need to setup variables below in your `C:\Workspace\.env`.  
-Create `.env` file in your `C:\Workspace`, then setup like below.  
-*You must get your ID's from cloud platform first.*  
-```
-YOUR_CLIENT_ID_HERE = "Naver Client ID"
-YOUR_APPLICATION_ID_HERE = "Google Admob Application ID"
+For this project, You need to setup your own camera.  
+Then, you need to check out which camera you are using from **Windows Device Manager**.  
+After checking which camera you are using, You can Open your camera through python  
+via below code.  
+```Python
+if cv2.ocl.haveOpenCL() :
+    cv2.ocl.setUseOpenCL(True)
+print('OpenCL : ', cv2.ocl.haveOpenCL())
+webcam = cv2.VideoCapture(0)
 ```
   
 ### Usage
-After setting up your `.env`, we will use them in `C:\Workspace\android\app\src\main\AndroidManifest.xml`  
-```xml
+After making sure that your camera is opened,  
+You can use variety of OpenCV functions.  
+Below code is some example of how I used OpenCV in this project
+```Python
+detector = cv2.SimpleBlobDetector_create(params)    #Detecting Blob
 ...
- <application
-        android:label="CaMap"
-        android:name="${applicationName}"
-        android:icon="@mipmap/camap_icon">
-        <meta-data
-            android:name="com.naver.maps.map.CLIENT_ID" 
-            android:value="@string/YOUR_CLIENT_ID_HERE" />
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/YOUR_APPLICATION_ID_HERE" />
-        <activity
+imgRGB = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)     #Making RGB file to BGR for openCV
+...
+cv2.putText(imgRGB, 'Dice', (dice[0], dice[1]), cv2.FONT_HERSHEY_SIMPLEX, 2,(0, 255, 0), 2) #Putting Text
+cv2.rectangle(imgRGB, (dice[0], dice[1]), (dice[2], dice[3]), (0, 0, 255), 3)               #Drawing Rectangle
+...
+frame_blurred = cv2.GaussianBlur(dst, Gaussian_ksize, 1)      #Gaussian Blur Filter
+frame_gray = cv2.cvtColor(frame_blurred, cv2.COLOR_BGR2GRAY)    #Gray Filter
+frame_canny = cv2.Canny(frame_gray, canny_threshold_min, canny_threshold_max, apertureSize=3, L2gradient=True)  #Canny Edge
 ...
 ```
   
-## naver_map_plugin
+## Torch
 
 ### Installation
-This allows you to use Naver API via naver_map_plugin.  
+This allows you to use Torch library, which means that you are now  
+available to Use Trained Yolo .pt Model
 
 ```console
-> flutter flutter pub add naver_map_plugin  
+> pip install torch>=1.7.0
 ```  
   
 Because this plugin requires lots of information about naver cloud platform,  
 I wrote detailed manual about this plugin in [My Notion(in Kor)](https://www.notion.so/shlee9605/959ac634936b4a96be20363bc153f53e#1f80ba301cd74cc6b3f46a7a1b1fffa3).  
   
-## csv
+## Torch
 
 ### Installation
 This allows you to read csv files in flutter.  
@@ -193,7 +188,7 @@ class SmokingAreaData {
 }
 ```
   
-## google_mobile_ads
+## Flask
 
 ### Installation
 This allows you to use google mobile ad banner in organized form/widget.  
@@ -206,7 +201,7 @@ I also had to write manual in [My Notion(in Kor)](https://www.notion.so/shlee960
 since this plugin also requires lots of information about google cloud platform, firebase, and Admob  
   
   
-## geolocator
+## Thread, Time, Socket
 
 ### Installation
 This gives you exact coordinates about your location  
@@ -221,7 +216,7 @@ This gives you exact coordinates about your location
 ### Usage
   Will be updated in Ver 1.0
   
-## etc
+## Time, sleep
 라이브러리 설치 -비밀번호 암호화, 토큰 관리
   
   
